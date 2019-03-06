@@ -1,0 +1,36 @@
+<h1><%= @course.course_name %> Enrollments</h1>
+<%= link_to 'Add Enrollment', new_course_enrollments_path(@course) %>
+
+<h2>Teacher</h2>
+<ul>
+  <%= @teacher.each do |t| %>
+    <li>
+      <%= t.user.full_name %>
+      <br>
+      <%= link_to 'Remove', course_enrollments_path(@course, t), method: :delete %>
+    </li>
+  <% end %>
+
+</ul>
+<h2>TA</h2>
+<ul>
+  <%= @ta.each do |t| %>
+    <li>
+      <%= t.user.full_name %>
+      <br>
+      <%= link_to 'Remove', course_enrollments_path(@course, t), method: :delete %>
+    </li>
+  <% end %>
+
+  </ul>
+
+  <h2>Student</h2>
+  <ul>
+  <%= @student.each do |t| %>
+    <li>
+      <%= t.user.full_name %>
+      <br>
+      <%= link_to 'Remove', course_enrollments_path(@course, t), method: :delete %>
+    </li>
+  <% end %>
+</ul>
